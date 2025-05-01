@@ -50,3 +50,39 @@ def is_valid(board, row, col):
         return True
 
     def no_box_duplicate(board, row, col):
+        curr_box = []
+        big_row = row // 3
+        big_col = col // 3
+        for r_index, rows in enumerate(board):
+            for c_index, num in enumerate(rows):
+                if r_index // 3 == big_row and c_index // 3 == big_col:
+                    curr_box.append(num)
+        count = Counter(curr_box)
+        for nums in range(1, 10):
+            if count[nums] > 1:
+                return False
+        return True
+
+    if no_row_duplicate(board, row, col) and no_col_duplicate(board, row, col) and no_box_duplicate(board, row, col):
+        return True
+    return False
+
+
+def solve(board):
+    pos = next_empty(board)
+    if pos is None:
+        return True
+    row, col = pos
+    for num in range(1, 10):
+        board[row][col] = num
+        print(board)
+        if is_valid(board, row, col):
+            board[row][col] = num
+            if solve(board):
+                return True
+        board[row][col] = 0
+    return False
+
+
+solve(test)
+print(test)
