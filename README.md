@@ -1,46 +1,49 @@
-NYT Sudoku Auto-Solver
+# NYT Sudoku Auto-Solver
 
 A command-line tool that:
 
-Retrieves today’s NYT Sudoku (easy, medium, or hard) via Playwright
+- Retrieves today’s NYT Sudoku (easy, medium, or hard) via Playwright
 
-Solves the puzzle using a backtracking recursion algorithm
+- Solves the puzzle using a backtracking recursion algorithm
 
-Opens a browser and automatically fills in every cell
+- Opens a browser and automatically fills in every cell
 
-Dependencies:
+## Dependencies:
 
 Python 3.8+
 
 Playwright for Python
 
-Installation:
+## Installation:
 
-Clone the repo:
+1. **Clone the repo**
+```bash
+git clone https://github.com/nickshan11/nyt-sudoku.git
+cd nyt-sudoku
+```
 
-git clone https://github.com/<your-username>/nyt-sudoku-solver.git
-cd nyt-sudoku-solver
-
-Create and activate a virtual environment:
-
+2. Create and activate a virtual environment:
+```bash
 python -m venv .venv
 # macOS/Linux: source .venv/bin/activate
 # Windows (PowerShell): .\.venv\Scripts\Activate.ps1
+```
 
-Install dependencies:
-
+3. Install dependencies:
+```bash
 pip install playwright
-
-Download browser binaries:
-
+```
+4. Download browser binaries:
+```bash
 python -m playwright install
+```
 
-Usage:
+## Usage:
 
-Run the solver:
-
+1. Run the solver:
+```bash
 python main.py
-
+```
 Select a difficulty: easy, medium, or hard
 
 A browser window opens and the solver fills in the grid
