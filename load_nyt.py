@@ -1,22 +1,23 @@
 from playwright.sync_api import sync_playwright
 
 
-def scrape_sudoku_cells():
+def scrape_sudoku_cells(difficulty):
     with sync_playwright() as p:
         # Launch a headless Chromium browser
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
-        # Go to the NYT easy Sudoku page
-        page.goto("https://www.nytimes.com/puzzles/sudoku/hard")
+
+        page.goto(f"https://www.nytimes.com/puzzles/sudoku/{difficulty}")
 
         # Wait until at least one cell has been injected
         page.wait_for_selector('div[data-testid^="sudoku-cell-"]')
 
         # Query all the cell divs
         cells = page.query_selector_all('div[data-testid^="sudoku-cell-"]')
+        
+        # Sort cells into 
         grid = []
-        # Print out their attributes
         for row in range(9):
             temp = []
             for col in range(9):
