@@ -31,7 +31,7 @@ python3 -m venv .venv
 
 3. Install dependencies:
 ```bash
-pip install playwright
+pip3 install playwright
 ```
 4. Download browser binaries:
 ```bash
