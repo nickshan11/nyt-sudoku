@@ -24,7 +24,7 @@ cd nyt-sudoku
 
 2. Create and activate a virtual environment:
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 # macOS/Linux: source .venv/bin/activate
 # Windows (PowerShell): .\.venv\Scripts\Activate.ps1
 ```
@@ -35,14 +35,14 @@ pip install playwright
 ```
 4. Download browser binaries:
 ```bash
-python -m playwright install
+python3 -m playwright install
 ```
 
 ## Usage:
 
 1. Run the solver:
 ```bash
-python main.py
+python3 main.py
 ```
 Select a difficulty: easy, medium, or hard
 
