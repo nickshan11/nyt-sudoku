@@ -15,5 +15,5 @@ while difficulty not in ["1", "2", "3"]:
 difficulty = modes[int(difficulty)-1]
 
 sudoku = load_nyt.scrape_sudoku_cells(difficulty)
-solver.solve(sudoku)
+solver.solve_curses(sudoku)
 sudoku_fill.launch(sudoku, difficulty)
