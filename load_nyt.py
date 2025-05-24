@@ -16,7 +16,7 @@ def scrape_sudoku_cells(difficulty):
         # Query all the cell divs
         cells = page.query_selector_all('div[data-testid^="sudoku-cell-"]')
         
-        # Sort cells into 
+        # Sort cells
         grid = []
         for row in range(9):
             temp = []
