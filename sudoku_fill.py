@@ -4,8 +4,7 @@ from playwright.sync_api import sync_playwright, Page
 def dismiss_overlays(page):
     # list all the button‐selectors you want to try
     selectors = [
-        "button.purr-blocker-card__button",                # the “Continue” popup
-        # the “×” close button
+        "button.purr-blocker-card__button", 
         "button.index-module_closeX__NstKo"
     ]
 
@@ -14,9 +13,7 @@ def dismiss_overlays(page):
             # wait a moment for it to appear
             page.wait_for_selector(sel, timeout=2000)
             page.click(sel)
-            # after clicking once, we can break or continue trying
-            # break
-        except TimeoutError:
+        except:
             pass
 
 
